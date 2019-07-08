@@ -13,6 +13,7 @@
 		35DB462022D3C531001A6A80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DB461E22D3C531001A6A80 /* Main.storyboard */; };
 		35DB462222D3C532001A6A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35DB462122D3C532001A6A80 /* Assets.xcassets */; };
 		35DB462522D3C532001A6A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DB462322D3C532001A6A80 /* LaunchScreen.storyboard */; };
+		35DB462D22D3C629001A6A80 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DB462C22D3C629001A6A80 /* Assignment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		35DB462122D3C532001A6A80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35DB462422D3C532001A6A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35DB462622D3C532001A6A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35DB462C22D3C629001A6A80 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				35DB461822D3C531001A6A80 /* AppDelegate.swift */,
+				35DB462C22D3C629001A6A80 /* Assignment.swift */,
 				35DB461A22D3C531001A6A80 /* MasterViewController.swift */,
 				35DB461C22D3C531001A6A80 /* DetailViewController.swift */,
 				35DB461E22D3C531001A6A80 /* Main.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35DB462D22D3C629001A6A80 /* Assignment.swift in Sources */,
 				35DB461D22D3C531001A6A80 /* DetailViewController.swift in Sources */,
 				35DB461B22D3C531001A6A80 /* MasterViewController.swift in Sources */,
 				35DB461922D3C531001A6A80 /* AppDelegate.swift in Sources */,
