@@ -76,6 +76,12 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Assignment Details" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="courseTextField" destination="NbM-Ig-qRY" id="HLd-yF-EmI"/>
+                        <outlet property="descriptionTextField" destination="SLR-Qo-r8d" id="HdV-tx-yxb"/>
+                        <outlet property="dueDateTextField" destination="fJx-mZ-E9G" id="iEP-Hw-ahO"/>
+                        <outlet property="titleTextField" destination="mBw-I9-XTO" id="fMJ-62-1Ge"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
