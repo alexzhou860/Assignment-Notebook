@@ -12,6 +12,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var assignments = [Assignment]()
+    let defaults = UserDefaults.standard
 
 
     override func viewDidLoad() {
@@ -25,12 +26,24 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        if let savedData = defaults.object(forKey: "data") as? Data {
+            if let decoded = try? JSONDecoder().decode([Assignment].self, from: savedData) {
+                assignments = decoded
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
         tableView.reloadData()
+        saveData()
+    }
+    
+    func saveData() {
+        if let encoded = try? JSONEncoder().encode(assignments) {
+            defaults.set(encoded, forKey: "data")
+        }
     }
 
     @objc
@@ -58,6 +71,7 @@ class MasterViewController: UITableViewController {
             let assignment = Assignment(title: titleTextField.text!, course: courseTextField.text!, dueDate: dueDateTextField.text!, description: descriptionTextField.text!)
             self.assignments.append(assignment)
             self.tableView.reloadData()
+            self.saveData()
         }
         alert.addAction(insertAction)
         present(alert, animated: true, completion: nil)
@@ -90,7 +104,7 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         let object = assignments[indexPath.row]
-        cell.textLabel!.text = object.description
+        cell.textLabel!.text = object.title
         return cell
     }
 
@@ -106,11 +120,13 @@ class MasterViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
+        saveData()
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let objectToMove = assignments.remove(at: sourceIndexPath.row)
         assignments.insert(objectToMove, at: destinationIndexPath.row)
+        saveData()
     }
 
 }
