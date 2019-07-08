@@ -11,9 +11,9 @@ import UIKit
 class Assignment: Codable {
     var title: String
     var course: String
-    var dueDate: Int
+    var dueDate: String
     var description: String
-    init(title: String, course: String, dueDate: Int, description: String) {
+    init(title: String, course: String, dueDate: String, description: String) {
         self.title = title
         self.course = course
         self.dueDate = dueDate
